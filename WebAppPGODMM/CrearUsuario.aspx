@@ -54,7 +54,6 @@
             <asp:TextBox runat="server" type="password" ID="txtPassword" CssClass="form-control" placeholder="Password" />
         </div>
     </div>
-    <div class="row">
         <div class="col-md-3">
             <div class="form-group">
                 <label class="control-label" for="focusedInput">Tipo</label>
