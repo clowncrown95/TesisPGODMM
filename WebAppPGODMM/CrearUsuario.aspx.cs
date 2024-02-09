@@ -25,8 +25,8 @@ namespace WebAppPGODMM
         private bool Validar()
         {
            bool resultado = true;
-            /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-            var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
+           Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
+           /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
             //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
             if (existe.USU_ID > 0)
             {

@@ -17,7 +17,7 @@ namespace WebAppPGODMM.Servicios
             List<Rol> resultado = new List<Rol>();
             try
             {
-                var Uri = url + "/api/Rol/SelectAll";
+                var Uri = url + "/Rol/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

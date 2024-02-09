@@ -19,6 +19,7 @@
             min-height: 100%;
             width: 100%;    
         }
+        
     </style>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
@@ -46,13 +47,23 @@
                 <br />
                 <div class="container">
                     <div class="jumbotron">
-                        <h1>Gestion de Equipos</h1>
-                        <h3>Iniciar Sesión</h3>
+                        <h1 class="text-center">Gestion de Equipos</h1>
+                        <h3 class="text-center">Iniciar Sesión</h3>
+                        <div class="row-md-3 text-center">
                         <b>Usuario</b>
-                        <asp:TextBox ID="txtCorreoElectronico" runat="server" placeholder="Usuario" MaxLength="30" Required="" />
+                        </div>
+                        <div class="row-md-3 text-center">
+                        <asp:TextBox ID="txtCorreoElectronico" runat="server" placeholder="Usuario" MaxLength="30" Required=""  />
+                        </div>
+                        <div class="row-md-3 text-center">
                         <b>Password</b>
+                        </div>
+                        <div class="row-md-3 text-center">
                         <asp:TextBox ID="txtContrasenia" runat="server" placeholder="Password" TextMode="Password" MaxLength="50" Required="" />
+                        </div>
+                        <div class="row-md-3 text-center">
                         <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" Text="Aceptar" OnClick="btnAceptar_Click" />
+                        </div>
                         <br />
                         <asp:UpdateProgress runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upLogin" DisplayAfter="1">
                             <ProgressTemplate>

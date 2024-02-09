@@ -242,6 +242,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Roles.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -325,6 +326,13 @@
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Local.cs" />
+    <Compile Include="Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\OrdTra.cs" />
     <Compile Include="Modelos\Persona.cs" />
     <Compile Include="Modelos\Rol.cs" />
