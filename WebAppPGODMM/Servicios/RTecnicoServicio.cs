@@ -16,7 +16,7 @@ namespace WebAppPGODMM.Servicios
             List<RTecnico> resultado = new List<RTecnico>();
             try
             {
-                var Uri = url + "/api/RTecnico/SelectAll";
+                var Uri = url + "/RTecnico/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

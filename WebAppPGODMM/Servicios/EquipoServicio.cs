@@ -17,7 +17,7 @@ namespace WebAppPGODMM.Servicios
             List<Equipo> resultado = new List<Equipo>();
             try
             {
-                var Uri = url + "/api/Equipo/SelectAll";
+                var Uri = url + "/Equipo/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

@@ -16,5 +16,11 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoDto.DaoDtoNomCom().SelectAll();
         }
+        [Route("SelectAllPercom")]
+        [HttpGet]
+        public List<Models.DTO.DTOPersonacom> SelectAllPercom()
+        {
+            return new Daos.DaoDto.DaoDtoNomCom().SelectAllPercom();
+        }
     }
 }

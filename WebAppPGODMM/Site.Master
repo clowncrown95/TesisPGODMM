@@ -57,7 +57,7 @@
                            <ul class="dropdown-menu">
                                 <li><a href="Usuarios">Usuario</a></li>
                                 <li><a href="Personas">Persona</a></li>
-                                <li><a href="Tecnicos">Tecnico</a></li>
+                                <li><a href="Tecnicos">Resumen Tecnico</a></li>
                                 <li><a href="Roles">Rol</a></li>
                                 <li><a href="Cargos">Cargo</a></li>
                                 <li><a href="Equipos">Equipo</a></li>

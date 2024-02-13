@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Security.Policy;
 using System.Text;
 using System.Web;
 using WebAppPGODMM.Modelos;
@@ -17,7 +16,7 @@ namespace WebAppPGODMM.Servicios
             List<Persona> resultado = new List<Persona>();
             try
             {
-                var Uri = url + "/api/Persona/SelectAll";
+                var Uri = url + "/Persona/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

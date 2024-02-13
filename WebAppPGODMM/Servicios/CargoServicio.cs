@@ -16,7 +16,7 @@ namespace WebAppPGODMM.Servicios
             List<Cargo> resultado = new List<Cargo>();
             try
             {
-                var Uri = url + "/api/Cargo/SelectAll";
+                var Uri = url + "/Cargo/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

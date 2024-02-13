@@ -221,6 +221,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Cargos.aspx" />
+    <Content Include="Categorias.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -229,6 +231,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="CrearUsuario.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Equipos.aspx" />
+    <Content Include="Estados.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -240,8 +244,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Locales.aspx" />
     <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Personas.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -272,6 +278,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Tecnicos.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -288,6 +295,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Cargos.aspx.cs">
+      <DependentUpon>Cargos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cargos.aspx.designer.cs">
+      <DependentUpon>Cargos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -309,8 +330,29 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Equipos.aspx.cs">
+      <DependentUpon>Equipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Equipos.aspx.designer.cs">
+      <DependentUpon>Equipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estados.aspx.cs">
+      <DependentUpon>Estados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estados.aspx.designer.cs">
+      <DependentUpon>Estados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Locales.aspx.cs">
+      <DependentUpon>Locales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Locales.aspx.designer.cs">
+      <DependentUpon>Locales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -320,12 +362,22 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Cargo.cs" />
+    <Compile Include="Modelos\DTOM\DTOPerCom.cs" />
+    <Compile Include="Modelos\OrdenTrabajo.cs" />
+    <Compile Include="Modelos\Persona.cs" />
     <Compile Include="Modelos\Categoria.cs" />
     <Compile Include="Modelos\DetOrdTra.cs" />
     <Compile Include="Modelos\DTOM\DTOUsuCom.cs" />
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Local.cs" />
+    <Compile Include="Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles.aspx.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,7 +386,6 @@
       <DependentUpon>Roles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Scripts\OrdTra.cs" />
-    <Compile Include="Modelos\Persona.cs" />
     <Compile Include="Modelos\Rol.cs" />
     <Compile Include="Modelos\RTecnico.cs" />
     <Compile Include="Modelos\Usuario.cs" />
@@ -365,6 +416,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Tecnicos.aspx.cs">
+      <DependentUpon>Tecnicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tecnicos.aspx.designer.cs">
+      <DependentUpon>Tecnicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>

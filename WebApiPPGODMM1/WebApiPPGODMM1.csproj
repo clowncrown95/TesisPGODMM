@@ -186,6 +186,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO\DTOPersonacom.cs" />
     <Compile Include="Models\DTO\DTOUsuariocom.cs" />
     <Compile Include="Models\MCargo.cs" />
     <Compile Include="Models\MCategoria.cs" />

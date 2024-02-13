@@ -17,7 +17,7 @@ namespace WebAppPGODMM.Servicios
             List<DetOrdTra> resultado = new List<DetOrdTra>();
             try
             {
-                var Uri = url + "/api/DetalleOrdenTrabajo/SelectAll";
+                var Uri = url + "/DetalleOrdenTrabajo/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

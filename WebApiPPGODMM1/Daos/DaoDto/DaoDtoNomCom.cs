@@ -21,5 +21,14 @@ namespace WebApiPPGODMM1.Daos.DaoDto
                 return results.ToList();
             }
         }
-    }
+        public List<DTOPersonacom> SelectAllPercom()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT P.PER_ID, C.CAR_NOMBRE, U.USU_USUARIO, isnull(P.PER_NOMBRE +' '+ P.PER_APELLIDO,'SIN DATOS') AS NOMBRECOM, P.PER_CEDULA, P.PER_DIRECCION, P.PER_TELEFONO, P.PER_CORREO\r\nFROM TBL_PERSONA AS P inner join TBL_CARGO AS C ON P.CAR_ID = C.CAR_ID\r\nleft join TBL_USUARIO AS U ON P.USU_ID = U.USU_ID WHERE P.PER_ELIMINO = 0";
+                var results = db.Query<Models.DTO.DTOPersonacom> (findByAnyQuery);
+                return results.ToList();
+            }
+        }
+     }
 }

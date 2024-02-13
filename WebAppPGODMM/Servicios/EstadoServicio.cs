@@ -17,7 +17,7 @@ namespace WebAppPGODMM.Servicios
             List<Estado> resultado = new List<Estado>();
             try
             {
-                var Uri = url + "/api/Estado/SelectAll";
+                var Uri = url + "/Estado/SelectAll";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
