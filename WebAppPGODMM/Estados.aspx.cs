@@ -35,7 +35,7 @@ namespace WebAppPGODMM
         }
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EstadoCargo");
+            Response.Redirect("CrearEstado");
         }
         protected void gvDatos_RowCommand(object sender, GridViewCommandEventArgs e)
         {

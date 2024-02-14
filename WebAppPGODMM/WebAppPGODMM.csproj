@@ -229,6 +229,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CrearCargo.aspx" />
+    <Content Include="CrearCategoria.aspx" />
+    <Content Include="CrearEquipo.aspx" />
+    <Content Include="CrearEstado.aspx" />
+    <Content Include="CrearLocal.aspx" />
+    <Content Include="CrearPersona.aspx" />
+    <Content Include="CrearRol.aspx" />
+    <Content Include="CrearRtecnico.aspx" />
     <Content Include="CrearUsuario.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Equipos.aspx" />
@@ -315,6 +323,62 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearCargo.aspx.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearCargo.aspx.designer.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearCategoria.aspx.cs">
+      <DependentUpon>CrearCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearCategoria.aspx.designer.cs">
+      <DependentUpon>CrearCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearEquipo.aspx.cs">
+      <DependentUpon>CrearEquipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearEquipo.aspx.designer.cs">
+      <DependentUpon>CrearEquipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearEstado.aspx.cs">
+      <DependentUpon>CrearEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearEstado.aspx.designer.cs">
+      <DependentUpon>CrearEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearLocal.aspx.cs">
+      <DependentUpon>CrearLocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearLocal.aspx.designer.cs">
+      <DependentUpon>CrearLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPersona.aspx.cs">
+      <DependentUpon>CrearPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearPersona.aspx.designer.cs">
+      <DependentUpon>CrearPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearRol.aspx.cs">
+      <DependentUpon>CrearRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearRol.aspx.designer.cs">
+      <DependentUpon>CrearRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearRtecnico.aspx.cs">
+      <DependentUpon>CrearRtecnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearRtecnico.aspx.designer.cs">
+      <DependentUpon>CrearRtecnico.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>

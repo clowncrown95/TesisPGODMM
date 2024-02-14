@@ -35,7 +35,7 @@ namespace WebAppPGODMM
         }
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CrearCargo");
+            Response.Redirect("CrearLocal");
         }
         protected void gvDatos_RowCommand(object sender, GridViewCommandEventArgs e)
         {

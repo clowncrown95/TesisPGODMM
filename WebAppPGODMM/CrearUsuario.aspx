@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearUsuario.aspx.cs" Inherits="WebAppPGODMM.CrearUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row">
         <div class="col-md-3">
-            <div class="form-group text-center">
+            <div class="form-group">
                 <label class="control-label" for="focusedInput">ROL</label>
                 <asp:RequiredFieldValidator
                     ID="rfvIdRol"
@@ -51,7 +50,7 @@
             <div class="form-group">
                 <label class="control-label" for="focusedInput">Password</label>
                 <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator1"
+                    ID="rfvPassword"
                     runat="server"
                     ControlToValidate="txtPassword"
                     ErrorMessage=" Campo Requerido."
