@@ -42,7 +42,7 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
-        public MCargo SelectById(int Id)
+        public Models.MCargo SelectById(int Id)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
