@@ -175,6 +175,7 @@
     <Compile Include="Daos\DaoCategoria.cs" />
     <Compile Include="Daos\DaoDetalleOrdenTrabajo.cs" />
     <Compile Include="Daos\DaoDto\DaoDtoNomCom.cs" />
+    <Compile Include="Daos\DaoDto\DaoDtoOrdenTrabajo.cs" />
     <Compile Include="Daos\DaoEquipo.cs" />
     <Compile Include="Daos\DaoEstado.cs" />
     <Compile Include="Daos\DaoLocal.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO\DTOOrdenTrabajo.cs" />
     <Compile Include="Models\DTO\DTOPersonacom.cs" />
     <Compile Include="Models\DTO\DTOUsuariocom.cs" />
     <Compile Include="Models\MCargo.cs" />
