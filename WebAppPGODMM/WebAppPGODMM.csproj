@@ -255,6 +255,7 @@
     <Content Include="Locales.aspx" />
     <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="OrdenTrabajo.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -435,6 +436,13 @@
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Local.cs" />
+    <Compile Include="OrdenTrabajo.aspx.cs">
+      <DependentUpon>OrdenTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrdenTrabajo.aspx.designer.cs">
+      <DependentUpon>OrdenTrabajo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
