@@ -64,5 +64,33 @@ namespace WebAppPGODMM.Servicios.DtoServicio
 
             return resultado;
         }
+
+        public List<Modelos.DTOM.DTOOrdTra> FindAllOrder()
+        {
+            List<Modelos.DTOM.DTOOrdTra> resultado = new List<Modelos.DTOM.DTOOrdTra>();
+            try
+            {
+                var Uri = url + "/DtoCompartido/SelectAllOrder";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Modelos.DTOM.DTOOrdTra>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
     }
 }

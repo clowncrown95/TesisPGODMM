@@ -11,7 +11,52 @@ namespace WebAppPGODMM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["login"] == null || (bool)Session["login"] == false)
+                    Response.Redirect("Login");
+                else
+                {
+                    CargarInformacion();
+                }
+
+            }
 
         }
+        private void CargarInformacion()
+        {
+            List<Modelos.DTOM.DTOOrdTra> listaOrdenTrabajo = new List<Modelos.DTOM.DTOOrdTra>();
+
+            listaOrdenTrabajo = new Servicios.DtoServicio.DtoCompartidoServicio().FindAllOrder();
+            gvDatos.DataSource = listaOrdenTrabajo;
+            gvDatos.DataBind();
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarInformacion();
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearOrdenTrabajo");
+        }
+
+        protected void gvDatos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            Session["PER_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
+
+            if (e.CommandName.Equals("detail"))
+            {
+                Response.Redirect("OTDetalles");
+            }
+            if (e.CommandName.Equals("edit"))
+            {
+                Response.Redirect("OTEditar");
+            }
+            if (e.CommandName.Equals("delete"))
+            {
+                Response.Redirect("OTEliminar");
+            }
+        }
     }
-}

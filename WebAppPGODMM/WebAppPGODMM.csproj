@@ -427,6 +427,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Cargo.cs" />
+    <Compile Include="Modelos\DTOM\DTOOrdTra.cs" />
     <Compile Include="Modelos\DTOM\DTOPerCom.cs" />
     <Compile Include="Modelos\OrdenTrabajo.cs" />
     <Compile Include="Modelos\Persona.cs" />

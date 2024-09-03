@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebApiPPGODMM1.Models.DTO
+namespace WebAppPGODMM.Modelos.DTOM
 {
-    public class DTOOrdenTrabajo
+    public class DTOOrdTra
     {
         public int ORD_ID { get; set; }
         public int USU_USUARIO { get; set; }
