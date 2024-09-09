@@ -41,17 +41,17 @@ namespace WebAppPGODMM
         {
             Session["LOC_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("LocalDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("LocalEditar");
+                int locID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.localId] = locID;
+                Response.Redirect("EditarLocal");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("LocalEliminar");
+                int locID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.localId] = locID;
+                Response.Redirect("EliminarLocal");
             }
         }
     }

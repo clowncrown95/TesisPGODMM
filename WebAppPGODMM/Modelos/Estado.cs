@@ -8,7 +8,6 @@ namespace WebAppPGODMM.Modelos
     public class Estado
     {
         public int EST_ID { get; set; }
-        public int ORD_ID { get; set; }
         public string EST_NOMBRE { get; set; }
         public string EST_DESCRIPCION { get; set; }
         public string EST_CREA { get; set; }

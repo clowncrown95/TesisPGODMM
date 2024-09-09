@@ -23,6 +23,12 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoRol().SelectAll();
         }
+        [Route("SelectList")]
+        [HttpGet]
+        public List<Models.MRol> SelectListAll()
+        {
+            return new Daos.DaoRol().SelectListAll();
+        }
         [Route("Insert")]
         [HttpPost]
         public int Insert(Models.MRol model)

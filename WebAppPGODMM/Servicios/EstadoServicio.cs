@@ -44,7 +44,7 @@ namespace WebAppPGODMM.Servicios
             Estado resultado = new Estado();
             try
             {
-                var Uri = url + "/api/Estado/SelectById?EST_ID" + id;
+                var Uri = url + "/Estado/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -70,11 +70,11 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/Estado/Insert";
+                var Uri = url + "/Estado/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(estado);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -98,7 +98,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Estado/Update";
+                var Uri = url + "/Estado/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(estado);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -125,7 +125,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Estado/Delete?EST_ID=" + Id + "&EST_ACTUALIZO=" + LastModifierId + "&EST_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Estado/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

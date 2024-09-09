@@ -11,8 +11,17 @@ namespace WebAppPGODMM
 {
 
 
-    public partial class CrearEstado
+    public partial class EditarEstado
     {
+
+        /// <summary>
+        /// Control lblEstadoId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField lblEstadoId;
 
         /// <summary>
         /// Control rfvNombre.
@@ -69,12 +78,12 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// Control lblResultado.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

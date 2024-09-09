@@ -18,8 +18,6 @@
                             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-right"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                 <li role="presentation">
-                                    <asp:LinkButton runat="server" CommandArgument='<%#Eval("USU_ID")%>' CommandName="detail"><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Ver</asp:LinkButton></li>
-                                <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("USU_ID")%>' CommandName="edit"><span class='glyphicon glyphicon-edit' aria-hidden='true'></span> Editar</asp:LinkButton></li>
                                 <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("USU_ID")%>' CommandName="delete"><span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span> Eliminar</asp:LinkButton></li>
@@ -28,11 +26,14 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Código" DataField="USU_ID" Visible="true" />
+                <asp:BoundField HeaderText="Rol_Id" DataField="ROL_ID" Visible="false" />
                 <asp:BoundField HeaderText="Rol" DataField="ROL_NOMBRRE" Visible="true" />
-                <asp:BoundField HeaderText="Persona" DataField="NOMBRECOM" Visible="true" />
                 <asp:BoundField HeaderText="Usuario" DataField="USU_USUARIO" Visible="true" />
                 <asp:BoundField HeaderText="Estado" DataField="USU_ESTADO" Visible="true" />
-                
+                <asp:BoundField HeaderText="Creo" DataField="USU_CREO" Visible="true" />
+                <asp:BoundField HeaderText="Actualizo" DataField="USU_ACTUALIZO" Visible="true" />
+                <asp:BoundField HeaderText="Fecha Creación" DataField="USU_FECHACREA" Visible="true" />
+                <asp:BoundField HeaderText="Fecha Actualizo" DataField="USU_FECHAACTUA" Visible="true" />                
             </Columns>
         </asp:GridView>
     </div>

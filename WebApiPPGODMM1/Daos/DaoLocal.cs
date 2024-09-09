@@ -45,7 +45,7 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string getQuery = "SELECT * FROM [dbo].[TBL_LOCAL] WHERE CAR_ID = @Id";
+                const string getQuery = "SELECT * FROM [dbo].[TBL_LOCAL] WHERE LOC_ID = @Id";
                 return db.QuerySingle<Models.MLocal>(getQuery, new { Id });
             }
         }
@@ -55,7 +55,7 @@ namespace WebApiPPGODMM1.Daos
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
                 const string updateQuery = "UPDATE [dbo].[TBL_LOCAL] SET  LOC_NOMBRE = @LOC_NOMBRE, LOC_NUMERO = @LOC_NUMERO, LOC_ACTUALIZO = @LOC_ACTUALIZO, LOC_FECHAACTUA = @LOC_FECHAACTUA WHERE LOC_ID = @LOC_ID";
-                var rowsAffected = db.ExecuteScalar<int>(updateQuery, new { model.LOC_NOMBRE, model.LOC_NUMERO, model.LOC_ACTUALIZO, model.LOC_FECHAACTUA });
+                var rowsAffected = db.ExecuteScalar<int>(updateQuery, new { model.LOC_ID, model.LOC_NOMBRE, model.LOC_NUMERO, model.LOC_ACTUALIZO, model.LOC_FECHAACTUA });
                 return rowsAffected == 1 ? true : false;
             }
         }

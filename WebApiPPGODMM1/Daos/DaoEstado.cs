@@ -25,8 +25,8 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string sql = "INSERT INTO [dbo].[TBL_ESTADO] (ORD_ID, EST_NOMBRE, EST_DESCRIPCION, EST_CREA, EST_ACTUALIZO, EST_FECHACREA, EST_FECHAACTUA, EST_ELIMINO) VALUES (@ORD_ID, @EST_NOMBRE, @EST_DESCRIPCION, @EST_CREA, @EST_ACTUALIZO, @EST_FECHACREA, @EST_FECHAACTUA, @EST_ELIMINO)";
-                var rowsAffected = db.ExecuteScalar<int>(sql, new { model.ORD_ID, model.EST_NOMBRE, model.EST_DESCRIPCION, model.EST_CREA, model.EST_ACTUALIZO, model.EST_FECHACREA, model.EST_FECHAACTUA, model.EST_ELIMINO });
+                const string sql = "INSERT INTO [dbo].[TBL_ESTADO] (EST_NOMBRE, EST_DESCRIPCION, EST_CREA, EST_ACTUALIZO, EST_FECHACREA, EST_FECHAACTUA, EST_ELIMINO) VALUES (@EST_NOMBRE, @EST_DESCRIPCION, @EST_CREA, @EST_ACTUALIZO, @EST_FECHACREA, @EST_FECHAACTUA, @EST_ELIMINO)";
+                var rowsAffected = db.ExecuteScalar<int>(sql, new { model.EST_NOMBRE, model.EST_DESCRIPCION, model.EST_CREA, model.EST_ACTUALIZO, model.EST_FECHACREA, model.EST_FECHAACTUA, model.EST_ELIMINO });
                 return rowsAffected;
             }
         }
@@ -54,8 +54,8 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string updateQuery = "UPDATE [dbo].[TBL_ESTADO] SET ORD_ID = @ORD_ID, EST_NOMBRE = @EST_NOMBRE, EST_DESCRIPCION = @EST_DESCRIPCION, EST_ACTUALIZO = @EST_ACTUALIZO, EST_FECHAACTUA = @EST_FECHAACTUA WHERE EST_ID = @EST_ID";
-                var rowsAffected = db.ExecuteScalar<int>(updateQuery, new { model.EST_ID, model.ORD_ID, model.EST_NOMBRE, model.EST_DESCRIPCION, model.EST_ACTUALIZO, model.EST_FECHAACTUA });
+                const string updateQuery = "UPDATE [dbo].[TBL_ESTADO] SET EST_NOMBRE = @EST_NOMBRE, EST_DESCRIPCION = @EST_DESCRIPCION, EST_ACTUALIZO = @EST_ACTUALIZO, EST_FECHAACTUA = @EST_FECHAACTUA WHERE EST_ID = @EST_ID";
+                var rowsAffected = db.ExecuteScalar<int>(updateQuery, new { model.EST_ID, model.EST_NOMBRE, model.EST_DESCRIPCION, model.EST_ACTUALIZO, model.EST_FECHAACTUA });
                 return rowsAffected == 1 ? true : false;
             }
         }

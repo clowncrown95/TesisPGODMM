@@ -21,44 +21,23 @@ namespace WebAppPGODMM
                 }
             }
         }
-        private bool Validar()
-        {
-            bool resultado = true;
-            Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-            /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
-             //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
-             if (existe.USU_ID > 0)
-             {
-                 lblResultado.Text = "El Código de producto ya existe";
-                 resultado = false;
-             }*/
-            return resultado;
-        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-                return;
             try
             {
-                /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-                Modelos.Usuario usuario = new Modelos.Usuario
+                var estado = new Modelos.Estado();
                 {
-                    ROL_ID = ,
-                    PER_ID = ,
-                    USU_USUARIO = ,
-                    USU_PASSWORD = ,
-                    USU_ESTADO = ,
-                    USU_CREO = ,
-                    USU_ACTUALIZO = ,
-                    USU_FECHACREA = GetDate(),
-                    USU_FECHAACTUA = GetDate(),
-                    USU_ELIMINO = 0,
+                    estado.EST_NOMBRE = txtNombre.Text;
+                    estado.EST_DESCRIPCION = txtDescripcion.Text;
+                    estado.EST_CREA = "";
+                    estado.EST_ACTUALIZO = "";
+                    estado.EST_FECHACREA = DateTime.Now;
+                    estado.EST_FECHAACTUA = DateTime.Now;
+                    estado.EST_ELIMINO = false;
                 };
-               var i = WebApiPPGODMM1.Daos.DaoUsuario.Insert(usuario);*/
-                /*if (i > 0)
-                     lblResultado.Text = "Datos grabados";
-                 else
-                     lblResultado.Text = "Intente de nuevo";*/
+                new Servicios.EstadoServicio().InsertEstado(estado);
+                Response.Redirect("Estados");
             }
             catch (Exception ex)
             {

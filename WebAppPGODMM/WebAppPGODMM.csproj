@@ -242,9 +242,16 @@
     <Content Include="EditarCargo.aspx" />
     <Content Include="EditarCategoria.aspx" />
     <Content Include="EditarEquipo.aspx" />
+    <Content Include="EditarEstado.aspx" />
+    <Content Include="EditarLocal.aspx" />
+    <Content Include="EditarRol.aspx" />
+    <Content Include="EditarUsuario.aspx" />
     <Content Include="EliminarCargo.aspx" />
     <Content Include="EliminarCategoria.aspx" />
     <Content Include="EliminarEquipo.aspx" />
+    <Content Include="EliminarEstado.aspx" />
+    <Content Include="EliminarLocal.aspx" />
+    <Content Include="EliminarRol.aspx" />
     <Content Include="Equipos.aspx" />
     <Content Include="Estados.aspx" />
     <Content Include="favicon.ico" />
@@ -422,6 +429,34 @@
     <Compile Include="EditarEquipo.aspx.designer.cs">
       <DependentUpon>EditarEquipo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarEstado.aspx.cs">
+      <DependentUpon>EditarEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarEstado.aspx.designer.cs">
+      <DependentUpon>EditarEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarLocal.aspx.cs">
+      <DependentUpon>EditarLocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarLocal.aspx.designer.cs">
+      <DependentUpon>EditarLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarRol.aspx.cs">
+      <DependentUpon>EditarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarRol.aspx.designer.cs">
+      <DependentUpon>EditarRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EliminarCargo.aspx.cs">
       <DependentUpon>EliminarCargo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +477,27 @@
     </Compile>
     <Compile Include="EliminarEquipo.aspx.designer.cs">
       <DependentUpon>EliminarEquipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarEstado.aspx.cs">
+      <DependentUpon>EliminarEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarEstado.aspx.designer.cs">
+      <DependentUpon>EliminarEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarLocal.aspx.cs">
+      <DependentUpon>EliminarLocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarLocal.aspx.designer.cs">
+      <DependentUpon>EliminarLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarRol.aspx.cs">
+      <DependentUpon>EliminarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarRol.aspx.designer.cs">
+      <DependentUpon>EliminarRol.aspx</DependentUpon>
     </Compile>
     <Compile Include="Equipos.aspx.cs">
       <DependentUpon>Equipos.aspx</DependentUpon>

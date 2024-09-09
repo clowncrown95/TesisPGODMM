@@ -24,13 +24,13 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRolnombre;
 
         /// <summary>
-        /// Control txtRolnombre.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRolnombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
         /// Control rfvRoldescripcion.
@@ -42,13 +42,13 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRoldescripcion;
 
         /// <summary>
-        /// Control txtRoldescripcion.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRoldescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
         /// Control btnGrabar.

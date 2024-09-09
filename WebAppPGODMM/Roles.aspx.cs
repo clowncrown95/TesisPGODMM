@@ -41,17 +41,17 @@ namespace WebAppPGODMM
         {
             Session["ROL_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("RolDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("RolEditar");
+                int rolID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.rolId] = rolID;
+                Response.Redirect("EditarRol");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("RolEliminar");
+                int rolID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.rolId] = rolID;
+                Response.Redirect("EliminarRol");
             }
         }
     }

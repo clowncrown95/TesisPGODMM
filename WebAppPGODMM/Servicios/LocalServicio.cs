@@ -43,7 +43,7 @@ namespace WebAppPGODMM.Servicios
             Local resultado = new Local();
             try
             {
-                var Uri = url + "/Local/SelectById?LOC_ID" + id;
+                var Uri = url + "/Local/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -73,7 +73,7 @@ namespace WebAppPGODMM.Servicios
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(local);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -124,7 +124,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/Local/Delete?LOC_ID=" + Id + "&LOC_ACTUALIZO=" + LastModifierId + "&LOC_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Local/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

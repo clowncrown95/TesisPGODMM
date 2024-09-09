@@ -9,7 +9,7 @@ namespace WebAppPGODMM.Modelos
     {
         public int USU_ID { get; set; }
         public int ROL_ID { get; set; }
-        public int PER_ID { get; set; }
+        public int ROL_NOMBRRE { get; set; }
         public string USU_USUARIO { get; set; }
         public string USU_PASSWORD { get; set; }
         public string USU_ESTADO { get; set; }

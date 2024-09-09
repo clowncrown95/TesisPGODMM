@@ -16,50 +16,49 @@ namespace WebAppPGODMM
             {
                 if (Session["login"] == null || (bool)Session["login"] == false)
                     Response.Redirect("Login", false);
-                else
-                {
-                    //cargar info
-                }
+
+                CargarRoles();
             }
         }
-        private bool Validar()
+
+        private void CargarRoles()
         {
-           bool resultado = true;
-           Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-           /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
-            //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
-            if (existe.USU_ID > 0)
+            var roles = ObtenerRoles();
+            ddlTRol.Items.Clear();
+            ddlTRol.Items.Add(new ListItem("Seleccione un Rol", ""));
+
+            foreach (var rol in roles)
             {
-                lblResultado.Text = "El Código de producto ya existe";
-                resultado = false;
-            }*/
-            return resultado;
+                ddlTRol.Items.Add(new ListItem(rol.ROL_NOMBRRE, rol.ROL_ID.ToString()));
+            }
         }
+
+        private List<Modelos.Rol> ObtenerRoles()
+        {
+            List<Modelos.Rol> listaRol = new List<Modelos.Rol>();
+
+            listaRol = new Servicios.RolServicio().FindListRol();
+            return listaRol;
+        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-                return;
             try
             {
-                /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-                Modelos.Usuario usuario = new Modelos.Usuario
+                var usuario = new Modelos.Usuario();
                 {
-                    ROL_ID = ,
-                    PER_ID = ,
-                    USU_USUARIO = ,
-                    USU_PASSWORD = ,
-                    USU_ESTADO = ,
-                    USU_CREO = ,
-                    USU_ACTUALIZO = ,
-                    USU_FECHACREA = GetDate(),
-                    USU_FECHAACTUA = GetDate(),
-                    USU_ELIMINO = 0,
+                    usuario.ROL_ID = int.Parse(ddlTRol.SelectedValue);
+                    usuario.USU_USUARIO = txtUsuario.Text;
+                    usuario.USU_PASSWORD = txtPassword.Text;
+                    usuario.USU_ESTADO = txtEstado.Text;
+                    usuario.USU_CREO = "";
+                    usuario.USU_ACTUALIZO = "";
+                    usuario.USU_FECHACREA = DateTime.Now;
+                    usuario.USU_FECHAACTUA = DateTime.Now;
+                    usuario.USU_ELIMINO = false;
                 };
-               var i = WebApiPPGODMM1.Daos.DaoUsuario.Insert(usuario);*/
-               /*if (i > 0)
-                    lblResultado.Text = "Datos grabados";
-                else
-                    lblResultado.Text = "Intente de nuevo";*/
+                new Servicios.UsuarioServicio().InsertUser(usuario);
+                Response.Redirect("Usuarios");
             }
             catch (Exception ex)
             {

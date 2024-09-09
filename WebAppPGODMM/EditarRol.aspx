@@ -1,5 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearRol.aspx.cs" Inherits="WebAppPGODMM.CrearRol" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarRol.aspx.cs" Inherits="WebAppPGODMM.EditarRol" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField runat="server" ID="lblRolId" />
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -34,5 +35,5 @@
     <asp:Button runat="server" ID="btnGrabar" Text="Grabar" OnClick="btnGrabar_Click" />
     <asp:Button runat="server" ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false" />
     <hr />
-    <asp:Label runat="server" ID="lblResultado" />
+    <asp:Label ForeColor="Red" ID="lblError" runat="server" />
 </asp:Content>

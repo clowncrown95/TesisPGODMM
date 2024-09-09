@@ -12,6 +12,9 @@ namespace WebAppPGODMM.Shared
         public const string cargoId = "cargoIdSF";
         public const string catId = "catIdSF";
         public const string equipoId = "equipoIdSF";
-
+        public const string estadoId = "estadoIdSF";
+        public const string localId = "localIdSF";
+        public const string rolId = "rolIdSF";
+        public const string usuarioId = "usuarioIdSF";
     }
 }

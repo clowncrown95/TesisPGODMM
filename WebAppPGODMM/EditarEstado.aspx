@@ -1,17 +1,18 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearRol.aspx.cs" Inherits="WebAppPGODMM.CrearRol" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarEstado.aspx.cs" Inherits="WebAppPGODMM.EditarEstado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField runat="server" ID="lblEstadoId" />
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
                 <label class="control-label" for="focusedInput">Nombre</label>
                 <asp:RequiredFieldValidator
-                    ID="rfvRolnombre"
+                    ID="rfvNombre"
                     runat="server"
                     ControlToValidate="txtNombre"
                     ErrorMessage="Campo Requerido."
                     ForeColor="Red"
                     Font-Size="Small" />
-                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="Administrador" />
+                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="En Proceso" />
             </div>
         </div>
     </div>
@@ -20,13 +21,13 @@
             <div class="form-group">
                 <label class="control-label" for="focusedInput">Descripción</label>
                 <asp:RequiredFieldValidator
-                    ID="rfvRoldescripcion"
+                    ID="rfvDescripcion"
                     runat="server"
                     ControlToValidate="txtDescripcion"
                     ErrorMessage=" Campo Requerido."
                     ForeColor="Red"
                     Font-Size="Small" />
-                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" placeholder="Maneja el sistema" />
+                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" placeholder=" " />
             </div>
         </div>
     </div>
@@ -34,5 +35,5 @@
     <asp:Button runat="server" ID="btnGrabar" Text="Grabar" OnClick="btnGrabar_Click" />
     <asp:Button runat="server" ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false" />
     <hr />
-    <asp:Label runat="server" ID="lblResultado" />
+    <asp:Label ForeColor="Red" ID="lblError" runat="server" />
 </asp:Content>

@@ -41,6 +41,16 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
+        public List<MRol> SelectListAll()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT ROL_ID, ROL_NOMBRRE FROM [dbo].[TBL_ROL] WHERE ROL_ELIMINO = 0 ";
+                var results = db.Query<Models.MRol>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+
         public MRol SelectById(int Id)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))

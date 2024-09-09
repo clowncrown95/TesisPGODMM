@@ -11,7 +11,7 @@
                     ErrorMessage="Campo Requerido."
                     ForeColor="Red"
                     Font-Size="Small" />
-                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="Tecnico" />
+                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="San Luis" />
             </div>
         </div>
     </div>

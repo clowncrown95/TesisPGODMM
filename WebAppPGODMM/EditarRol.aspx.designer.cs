@@ -11,17 +11,26 @@ namespace WebAppPGODMM
 {
 
 
-    public partial class CrearEstado
+    public partial class EditarRol
     {
 
         /// <summary>
-        /// Control rfvNombre.
+        /// Control lblRolId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        protected global::System.Web.UI.WebControls.HiddenField lblRolId;
+
+        /// <summary>
+        /// Control rfvRolnombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRolnombre;
 
         /// <summary>
         /// Control txtNombre.
@@ -33,13 +42,13 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control rfvDescripcion.
+        /// Control rfvRoldescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRoldescripcion;
 
         /// <summary>
         /// Control txtDescripcion.
@@ -69,12 +78,12 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// Control lblResultado.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

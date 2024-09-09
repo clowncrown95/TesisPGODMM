@@ -29,6 +29,12 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoUsuario().SelectAll(filtro);
         }
+        [Route("SelectAllU")]
+        [HttpGet]
+        public List<Models.MUsuario> SelectAllU()
+        {
+            return new Daos.DaoUsuario().SelectAllU();
+        }
         [Route("Insert")]
         [HttpPost]
         public int Insert(Models.MUsuario model)

@@ -1,20 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearEstado.aspx.cs" Inherits="WebAppPGODMM.CrearEstado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div class="row">
-    <div class="col-md-3">
-        <div class="form-group">
-            <label class="control-label" for="focusedInput">Orden Codigo</label>
-            <asp:RequiredFieldValidator
-                ID="rfvIdorden"
-                runat="server"
-                ControlToValidate="txtIdorden"
-                ErrorMessage="Campo Requerido."
-                ForeColor="Red"
-                Font-Size="Small" />
-            <asp:TextBox runat="server" ID="txtIdorden" CssClass="form-control" placeholder="Codigo de orden" />
-        </div>
-    </div>
-</div>
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -26,7 +11,7 @@
                     ErrorMessage="Campo Requerido."
                     ForeColor="Red"
                     Font-Size="Small" />
-                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="Tecnico" />
+                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" placeholder="En Proceso" />
             </div>
         </div>
     </div>

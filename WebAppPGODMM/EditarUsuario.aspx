@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearUsuario.aspx.cs" Inherits="WebAppPGODMM.CrearUsuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarUsuario.aspx.cs" Inherits="WebAppPGODMM.EditarUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField runat="server" ID="lblUsuaId" />
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -46,7 +47,7 @@
             </div>
         </div>
     </div>
-        <div class="row">
+    <div class="row">
         <div class="col-md-3">
             <div class="form-group">
                 <label class="control-label" for="focusedInput">Estado</label>
@@ -65,5 +66,5 @@
     <asp:Button runat="server" ID="btnGrabar" Text="Grabar" OnClick="btnGrabar_Click" />
     <asp:Button runat="server" ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false" />
     <hr />
-    <asp:Label runat="server" ID="lblResultado" />
+    <asp:Label ForeColor="Red" ID="lblError" runat="server" />
 </asp:Content>

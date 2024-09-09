@@ -38,12 +38,39 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+        public List<Usuario> FindAllU()
+        {
+            List<Usuario> resultado = new List<Usuario>();
+            try
+            {
+                var Uri = url + "/Usuario/SelectAllU";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Usuario>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
         public Usuario GetUser(int id)
         {
             Usuario resultado = new Usuario();
             try
             {
-                var Uri = url + "/Usuario/SelectById?USU_ID=" + id;
+                var Uri = url + "/Usuario/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -75,7 +102,7 @@ namespace WebAppPGODMM.Servicios
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(User);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -126,7 +153,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/Usuario/Delete?USU_ID=" + Id + "&USU_ACTUALIZO=" + LastModifierId + "&USU_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Usuario/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

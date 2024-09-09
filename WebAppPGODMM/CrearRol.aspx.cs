@@ -21,51 +21,29 @@ namespace WebAppPGODMM
                 }
             }
         }
-        private bool Validar()
-        {
-            bool resultado = true;
-            Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-            /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
-             //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
-             if (existe.USU_ID > 0)
-             {
-                 lblResultado.Text = "El Código de producto ya existe";
-                 resultado = false;
-             }*/
-            return resultado;
-        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-                return;
             try
             {
-                /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-                Modelos.Usuario usuario = new Modelos.Usuario
+                var rol = new Modelos.Rol();
                 {
-                    ROL_ID = ,
-                    PER_ID = ,
-                    USU_USUARIO = ,
-                    USU_PASSWORD = ,
-                    USU_ESTADO = ,
-                    USU_CREO = ,
-                    USU_ACTUALIZO = ,
-                    USU_FECHACREA = GetDate(),
-                    USU_FECHAACTUA = GetDate(),
-                    USU_ELIMINO = 0,
+                    rol.ROL_NOMBRRE = txtNombre.Text;
+                    rol.ROL_DESCRIPCION = txtDescripcion.Text;
+                    rol.ROL_CREA = "";
+                    rol.ROL_ACTUALIZO = "";
+                    rol.ROL_FECHACREA = DateTime.Now;
+                    rol.ROL_FECHAACTUA = DateTime.Now;
+                    rol.ROL_ELIMINO = false;
                 };
-               var i = WebApiPPGODMM1.Daos.DaoUsuario.Insert(usuario);*/
-                /*if (i > 0)
-                     lblResultado.Text = "Datos grabados";
-                 else
-                     lblResultado.Text = "Intente de nuevo";*/
+                new Servicios.RolServicio().InsertRol(rol);
+                Response.Redirect("Roles");
             }
             catch (Exception ex)
             {
                 lblResultado.Text = ex.Message.ToString();
             }
         }
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Roles", false);

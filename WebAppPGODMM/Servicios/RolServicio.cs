@@ -39,12 +39,39 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+        public List<Rol> FindListRol()
+        {
+            List<Rol> resultado = new List<Rol>();
+            try
+            {
+                var Uri = url + "/Rol/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Rol>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
         public Rol GetRol(int id)
         {
             Rol resultado = new Rol();
             try
             {
-                var Uri = url + "/api/Rol/SelectById?ROL_ID" + id;
+                var Uri = url + "/Rol/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -72,11 +99,11 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/Rol/Insert";
+                var Uri = url + "/Rol/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(rol);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -100,7 +127,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Rol/Update";
+                var Uri = url + "/Rol/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(rol);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -127,7 +154,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Rol/Delete?ROL_ID=" + Id + "&ROL_ACTUALIZO=" + LastModifierId + "&ROL_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Rol/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
