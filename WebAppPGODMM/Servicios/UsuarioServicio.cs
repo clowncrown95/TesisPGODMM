@@ -36,12 +36,39 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
-        public List<Usuario> FindAllU()
+        public List<Usuario> FindList()
         {
             List<Usuario> resultado = new List<Usuario>();
             try
             {
-                var Uri = url + "/Usuario/SelectAllU";
+                var Uri = url + "/Usuario/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Usuario>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+        public List<Usuario> FindListUsuario()
+        {
+            List<Usuario> resultado = new List<Usuario>();
+            try
+            {
+                var Uri = url + "/Usuario/SelectListUsuario";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

@@ -9,6 +9,7 @@ namespace WebApiPPGODMM1.Models
     {
         public int PER_ID { get; set; }
         public int CAR_ID { get; set; }
+        public int USU_ID { get; set; }
         public string PER_APELLIDO { get; set; }
         public string PER_NOMBRE { get; set; }
         public string PER_CEDULA { get; set; }

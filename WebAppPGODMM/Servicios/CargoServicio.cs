@@ -36,6 +36,33 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+        public List<Cargo> FindListCargo()
+        {
+            List<Cargo> resultado = new List<Cargo>();
+            try
+            {
+                var Uri = url + "/Cargo/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Cargo>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
         public Cargo GetCargo(int id)
         {
             Cargo resultado = new Cargo();

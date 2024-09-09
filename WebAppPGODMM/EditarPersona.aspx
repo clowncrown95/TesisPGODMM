@@ -1,5 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CrearPersona.aspx.cs" Inherits="WebAppPGODMM.CrearPersona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarPersona.aspx.cs" Inherits="WebAppPGODMM.EditarPersona" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField runat="server" ID="lblPersonaId" />
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
@@ -122,9 +123,9 @@
             </div>
         </div>
     </div>
-<hr />
-<asp:Button runat="server" ID="btnGrabar" Text="Grabar" OnClick="btnGrabar_Click" />
-<asp:Button runat="server" ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false" />
-<hr />
-<asp:Label runat="server" ID="lblResultado" />
+    <hr />
+    <asp:Button runat="server" ID="btnGrabar" Text="Grabar" OnClick="btnGrabar_Click" />
+    <asp:Button runat="server" ID="btnCancelar" Text="Cancelar" OnClick="btnCancelar_Click" CausesValidation="false" />
+    <hr />
+    <asp:Label ForeColor="Red" ID="lblError" runat="server" />
 </asp:Content>

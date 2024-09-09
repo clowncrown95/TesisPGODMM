@@ -26,8 +26,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Código" DataField="USU_ID" Visible="true" />
-                <asp:BoundField HeaderText="Rol_Id" DataField="ROL_ID" Visible="false" />
-                <asp:BoundField HeaderText="Rol" DataField="ROL_NOMBRRE" Visible="true" />
+                <asp:BoundField HeaderText="Rol" DataField="ROL_ID" Visible="true" />
                 <asp:BoundField HeaderText="Usuario" DataField="USU_USUARIO" Visible="true" />
                 <asp:BoundField HeaderText="Estado" DataField="USU_ESTADO" Visible="true" />
                 <asp:BoundField HeaderText="Creo" DataField="USU_CREO" Visible="true" />

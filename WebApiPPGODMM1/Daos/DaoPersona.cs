@@ -25,8 +25,8 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string sql = "INSERT INTO [dbo].[TBL_PERSONA] ( CAR_ID, PER_APELLIDO, PER_NOMBRE, PER_CEDULA, PER_DIRECCION, PER_TELEFONO, PER_CORREO, PER_CREO, PER_ACTUALIZO, PER_FECHACREA, PER_FECHAACTUA, PER_ELIMINO) VALUES (@CAR_ID, @USU_ID, @ORD_ID, @ROL_ID, @PER_APELLIDO, @PER_NOMBRE, @PER_CEDULA, @PER_DIRECCION, @PER_TELEFONO, @PER_CORREO, @PER_CREO, @PER_ACTUALIZO, @PER_FECHACREA, @PER_FECHAACTUA, @PER_ELIMINO)";
-                var rowsAffected = db.ExecuteScalar<int>(sql, new { model.CAR_ID, model.PER_APELLIDO, model.PER_NOMBRE, model.PER_CEDULA, model.PER_DIRECCION, model.PER_TELEFONO, model.PER_CORREO, model.PER_CREO, model.PER_ACTUALIZO, model.PER_FECHACREA, model.PER_FECHAACTUA, model.PER_ELIMINO });
+                const string sql = "INSERT INTO [dbo].[TBL_PERSONA] ( CAR_ID, USU_ID, PER_APELLIDO, PER_NOMBRE, PER_CEDULA, PER_DIRECCION, PER_TELEFONO, PER_CORREO, PER_CREO, PER_ACTUALIZO, PER_FECHACREA, PER_FECHAACTUA, PER_ELIMINO) VALUES (@CAR_ID, @USU_ID, @PER_APELLIDO, @PER_NOMBRE, @PER_CEDULA, @PER_DIRECCION, @PER_TELEFONO, @PER_CORREO, @PER_CREO, @PER_ACTUALIZO, @PER_FECHACREA, @PER_FECHAACTUA, @PER_ELIMINO)";
+                var rowsAffected = db.ExecuteScalar<int>(sql, new { model.CAR_ID, model.USU_ID, model.PER_APELLIDO, model.PER_NOMBRE, model.PER_CEDULA, model.PER_DIRECCION, model.PER_TELEFONO, model.PER_CORREO, model.PER_CREO, model.PER_ACTUALIZO, model.PER_FECHACREA, model.PER_FECHAACTUA, model.PER_ELIMINO });
                 return rowsAffected;
             }
         }

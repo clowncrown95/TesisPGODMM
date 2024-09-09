@@ -18,8 +18,6 @@
                             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-right"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                 <li role="presentation">
-                                    <asp:LinkButton runat="server" CommandArgument='<%#Eval("PER_ID")%>' CommandName="detail"><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Ver</asp:LinkButton></li>
-                                <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("PER_ID")%>' CommandName="edit"><span class='glyphicon glyphicon-edit' aria-hidden='true'></span> Editar</asp:LinkButton></li>
                                 <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("PER_ID")%>' CommandName="delete"><span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span> Eliminar</asp:LinkButton></li>
@@ -28,9 +26,10 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Código" DataField="PER_ID" Visible="true" />
-                <asp:BoundField HeaderText="Cargo" DataField="CAR_NOMBRE" Visible="true" />
-                <asp:BoundField HeaderText="Usuario" DataField="USU_USUARIO" Visible="true" />
-                <asp:BoundField HeaderText="Nombre" DataField="NOMBRECOM" Visible="true" />
+                <asp:BoundField HeaderText="Cargo" DataField="CAR_ID" Visible="false" />
+                <asp:BoundField HeaderText="Usuario" DataField="USU_ID" Visible="False" />
+                <asp:BoundField HeaderText="Apellido" DataField="PER_APELLIDO" Visible="true" />
+                <asp:BoundField HeaderText="Nombre" DataField="PER_NOMBRE" Visible="true" />
                 <asp:BoundField HeaderText="Cedula" DataField="PER_CEDULA" Visible="true" />
                 <asp:BoundField HeaderText="Direccion" DataField="PER_DIRECCION" Visible="true" />
                 <asp:BoundField HeaderText="Telefono" DataField="PER_TELEFONO" Visible="true" />

@@ -42,6 +42,16 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
+        public List<Models.MCargo> SelectList()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT CAR_ID, CAR_NOMBRE  FROM [dbo].[TBL_CARGO] WHERE CAR_ELIMINO = 0 ";
+                var results = db.Query<Models.MCargo>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+
         public Models.MCargo SelectById(int Id)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))

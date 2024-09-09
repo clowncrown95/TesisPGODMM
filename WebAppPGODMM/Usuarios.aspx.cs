@@ -16,15 +16,13 @@ namespace WebAppPGODMM
                 {
                     CargarInformacion();
                 }
-
             }
-
         }
         private void CargarInformacion()
         {
             List<Modelos.Usuario> listaUsuario = new List<Modelos.Usuario>();
 
-            listaUsuario = new Servicios.UsuarioServicio().FindAllU();
+            listaUsuario = new Servicios.UsuarioServicio().FindList();
             gvDatos.DataSource = listaUsuario;
             gvDatos.DataBind();
         }

@@ -43,7 +43,7 @@ namespace WebAppPGODMM.Servicios
             Persona resultado = new Persona();
             try
             {
-                var Uri = url + "/api/Persona/SelectById?PER_ID" + id;
+                var Uri = url + "/Persona/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -69,11 +69,11 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/Persona/Insert";
+                var Uri = url + "/Persona/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(persona);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -97,7 +97,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Persona/Update";
+                var Uri = url + "/Persona/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(persona);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -124,7 +124,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Persona/Delete?PER_ID=" + Id + "&PER_ACTUALIZO=" + LastModifierId + "&PER_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/api/Persona/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

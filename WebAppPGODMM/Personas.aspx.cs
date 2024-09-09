@@ -25,9 +25,14 @@ namespace WebAppPGODMM
         }
         private void CargarInformacion()
         {
-            List<Modelos.DTOM.DTOPerCom> listaPersona = new List<Modelos.DTOM.DTOPerCom>();
+            /*List<Modelos.DTOM.DTOPerCom> listaPersona = new List<Modelos.DTOM.DTOPerCom>();
 
             listaPersona = new Servicios.DtoServicio.DtoCompartidoServicio().FindAllPersonas();
+            gvDatos.DataSource = listaPersona;
+            gvDatos.DataBind();*/
+            List<Modelos.Persona> listaPersona = new List<Modelos.Persona>();
+
+            listaPersona = new Servicios.PersonaServicio().FindAllPersona();
             gvDatos.DataSource = listaPersona;
             gvDatos.DataBind();
         }
@@ -46,17 +51,17 @@ namespace WebAppPGODMM
         {
             Session["PER_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("PersonaDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("PersonaEditar");
+                int perId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.persoId] = perId;
+                Response.Redirect("EditarPersona");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("PersonaEliminar");
+                int perId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.persoId] = perId;
+                Response.Redirect("EliminarPersona");
             }
         }
     }

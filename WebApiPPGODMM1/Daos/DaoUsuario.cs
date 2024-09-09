@@ -46,12 +46,22 @@ namespace WebApiPPGODMM1.Daos
             throw new NotImplementedException();
         }
 
-        public List<MUsuario> SelectAllU()
+        public List<MUsuario> SelectList()
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                /*SELECT * FROM [dbo].[TBL_USUARIO] WHERE USU_ELIMINO = 0*/
-                string findByAnyQuery = "SELECT U.USU_ID, R.ROL_NOMBRRE, U.USU_USUARIO, U.USU_ESTADO, U.USU_CREO, U.USU_ACTUALIZO, U.USU_FECHACREA, U.USU_FECHAACTUA FROM [dbo].[TBL_USUARIO] AS U inner join [dbo].[TBL_ROL] AS R ON U.ROL_ID = R.ROL_ID";
+                /*SELECT U.USU_ID, R.ROL_NOMBRRE, U.USU_USUARIO, U.USU_ESTADO, U.USU_CREO, U.USU_ACTUALIZO, U.USU_FECHACREA, U.USU_FECHAACTUA FROM [dbo].[TBL_USUARIO] AS U inner join [dbo].[TBL_ROL] AS R ON U.ROL_ID = R.ROL_ID WHERE U.USU_ELIMINO = 0*/
+                string findByAnyQuery = "SELECT * FROM [dbo].[TBL_USUARIO] WHERE USU_ELIMINO = 0";
+                var results = db.Query<Models.MUsuario>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+        public List<MUsuario> SelectListUsuario()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                /*SELECT U.USU_ID, R.ROL_NOMBRRE, U.USU_USUARIO, U.USU_ESTADO, U.USU_CREO, U.USU_ACTUALIZO, U.USU_FECHACREA, U.USU_FECHAACTUA FROM [dbo].[TBL_USUARIO] AS U inner join [dbo].[TBL_ROL] AS R ON U.ROL_ID = R.ROL_ID WHERE U.USU_ELIMINO = 0*/
+                string findByAnyQuery = "SELECT USU_ID, USU_USUARIO FROM [dbo].[TBL_USUARIO] WHERE USU_ELIMINO = 0";
                 var results = db.Query<Models.MUsuario>(findByAnyQuery);
                 return results.ToList();
             }

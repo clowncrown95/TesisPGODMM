@@ -11,5 +11,6 @@
         public const string localId = "localIdSF";
         public const string rolId = "rolIdSF";
         public const string usuarioId = "usuarioIdSF";
+        public const string persoId = "persoIdSF";
     }
 }

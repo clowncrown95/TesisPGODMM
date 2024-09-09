@@ -11,8 +11,17 @@ namespace WebAppPGODMM
 {
 
 
-    public partial class CrearPersona
+    public partial class EditarPersona
     {
+
+        /// <summary>
+        /// lblPersonaId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField lblPersonaId;
 
         /// <summary>
         /// rfvIdCargo control.
@@ -177,12 +186,12 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// lblResultado control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

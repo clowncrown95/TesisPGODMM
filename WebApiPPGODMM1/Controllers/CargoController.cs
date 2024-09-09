@@ -28,6 +28,12 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoCargo().SelectAll();
         }
+        [Route("SelectList")]
+        [HttpGet]
+        public List<Models.MCargo> SelectList()
+        {
+            return new Daos.DaoCargo().SelectList();
+        }
         [Route("Insert")]
         [HttpPost]
         public int Insert(Models.MCargo model)
