@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebAppPGODMM.Modelos;
 
 namespace WebAppPGODMM
 {
@@ -41,17 +42,17 @@ namespace WebAppPGODMM
         {
             Session["EQU_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("EquipoDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("EquipoEditar");
+                int equId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.equipoId] = equId;
+                Response.Redirect("EditarEquipo");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("EquipoEliminar");
+                int equId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.equipoId] = equId;
+                Response.Redirect("EliminarEquipo");
             }
         }
     }

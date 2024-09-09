@@ -41,6 +41,16 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
+        public List<MCategoria> SelectList()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT CAT_ID, CAT_NOMBRE FROM [dbo].[TBL_CATEGORIA] WHERE CAT_ELIMINO = 0 ";
+                var results = db.Query<Models.MCategoria>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+
         public MCategoria SelectById(int Id)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
@@ -54,7 +64,7 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string updateQuery = "UPDATE [dbo].[TBL_CATEGORIA] SET CAT_NOMBRE = @CAT_NOMBRE, CAT_DESCRIPCION = @CAT_DESCRIPCION, CAT_PORCENTAJE = CAT_PORCENTAJE, CAT_ACTUALIZO = @CAT_ACTUALIZO, CAT_FECHAACTUA = @CAT_FECHAACTUA WHERE CAT_ID = @CAT_ID";
+                const string updateQuery = "UPDATE [dbo].[TBL_CATEGORIA] SET CAT_NOMBRE = @CAT_NOMBRE, CAT_DESCRIPCION = @CAT_DESCRIPCION, CAT_PORCENTAJE = @CAT_PORCENTAJE, CAT_ACTUALIZO = @CAT_ACTUALIZO, CAT_FECHAACTUA = @CAT_FECHAACTUA WHERE CAT_ID = @CAT_ID";
                 var rowsAffected = db.ExecuteScalar<int>(updateQuery, new { model.CAT_ID, model.CAT_NOMBRE, model.CAT_DESCRIPCION, model.CAT_PORCENTAJE, model.CAT_ACTUALIZO, model.CAT_FECHAACTUA });
                 return rowsAffected == 1 ? true : false;
             }

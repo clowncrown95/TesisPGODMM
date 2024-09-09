@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebAppPGODMM
 {
-    public partial class OrdenTrabajo : System.Web.UI.Page
+    public partial class OrdenesTrabajo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,3 +60,4 @@ namespace WebAppPGODMM
             }
         }
     }
+}

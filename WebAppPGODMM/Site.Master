@@ -55,16 +55,15 @@
                         <li class="dropdown">
                            <a class="dropdown-menu-right" data-toggle="dropdown" href="~/">Menu<span class="caret"></span></a>
                            <ul class="dropdown-menu">
-                                <li><a href="Usuarios">Usuario</a></li>
-                                <li><a href="Personas">Persona</a></li>
-                                <li><a href="Tecnicos">Resumen Tecnico</a></li>
-                                <li><a href="Roles">Rol</a></li>
                                 <li><a href="Cargos">Cargo</a></li>
+                                <li><a href="Categorias">Categoria</a></li>
                                 <li><a href="Equipos">Equipo</a></li>
                                 <li><a href="Estados">Estado</a></li>
-                                <li><a href="Categorias">Categoria</a></li>
                                 <li><a href="Locales">Local</a></li>
-                                <li><a href="OrdenesTrabajos">Ordenes de Trabajo</a></li>
+                                <li><a href="OrdenesTrabajo">Ordenes de Trabajo</a></li>
+                                <li><a href="Personas">Persona</a></li>
+                                <li><a href="Roles">Rol</a></li>
+                                <li><a href="Usuarios">Usuario</a></li>
                                 <li><a runat="server" href="~/About">Acerca de</a></li>
                                 <li><a runat="server" href="~/Contact">Contacto</a></li>
                            </ul>

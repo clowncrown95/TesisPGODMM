@@ -22,5 +22,11 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoDto.DaoDtoNomCom().SelectAllPercom();
         }
+        [Route("SelectAllOrdTra")]
+        [HttpGet]
+        public List<Models.DTO.DTOOrdenTrabajo> SelectAllOrdTra()
+        {
+            return new Daos.DaoDto.DaoDtoOrdenTrabajo().SelectAll();
+        }
     }
 }

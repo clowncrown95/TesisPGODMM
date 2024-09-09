@@ -43,7 +43,7 @@ namespace WebAppPGODMM.Servicios
             Cargo resultado = new Cargo();
             try
             {
-                var Uri = url + "/api/Cargo/SelectById?CAR_ID" + id;
+                var Uri = url + "/Cargo/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -69,11 +69,11 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/Cargo/Insert";
+                var Uri = url + "/Cargo/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(cargo);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -97,7 +97,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Cargo/Update";
+                var Uri = url + "/Cargo/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(cargo);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -124,7 +124,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Cargo/Delete?CAR_ID=" + Id + "&CAR_ACTUALIZO=" + LastModifierId + "&CAR_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Cargo/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

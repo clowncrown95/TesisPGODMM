@@ -22,6 +22,12 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoEquipo().SelectAll();
         }
+        [Route("SelectList")]
+        [HttpGet]
+        public List<Models.MEquipo> SelectList()
+        {
+            return new Daos.DaoEquipo().SelectAll();
+        }
         [Route("Insert")]
         [HttpPost]
         public int Insert(Models.MEquipo model)

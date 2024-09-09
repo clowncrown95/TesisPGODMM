@@ -11,12 +11,12 @@ namespace WebAppPGODMM.Servicios
 {
     public class UsuarioServicio : ClienteBase 
     {
-        public List<Usuario> FindAllUser()
+        public List<Usuario> FindAllUser(string filtro)
         {
             List<Usuario> resultado = new List<Usuario>();
             try
             {
-                var Uri = url + "/Usuario/SelectAll";
+                var Uri = url + "/Usuario/SelectAll?filtro= "+filtro+"";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

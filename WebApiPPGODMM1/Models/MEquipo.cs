@@ -9,6 +9,7 @@ namespace WebApiPPGODMM1.Models
     {
         public int EQU_ID { get; set; }
         public int CAT_ID { get; set; }
+        public string CAT_NOMBRE { get; set; }
         public string EQU_NOMBRE { get; set; }
         public string EQU_CODIGO { get; set; }
         public string EQU_DESCRIPCION { get; set; }

@@ -41,17 +41,17 @@ namespace WebAppPGODMM
         {
             Session["CAT_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("CategoriaDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("CategoriaEditar");
+                int catID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.catId] = catID;
+                Response.Redirect("EditarCategoria");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("CategoriaEliminar");
+                int catID = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.catId] = catID;
+                Response.Redirect("EliminarCategoria");
             }
         }
     }

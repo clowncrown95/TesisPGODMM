@@ -35,7 +35,18 @@ namespace WebApiPPGODMM1.Daos
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string findByAnyQuery = "SELECT * FROM [dbo].[TBL_EQUIPO] WHERE EQU_ELIMINO = 0 ";
+                /*SELECT * FROM [dbo].[TBL_EQUIPO] WHERE EQU_ELIMINO = 0*/
+                const string findByAnyQuery = "SELECT E.EQU_ID, C.CAT_NOMBRE, E.EQU_NOMBRE, E.EQU_CODIGO, E.EQU_DESCRIPCION, E.EQU_TIEMPO, E.EQU_COSTO, E.EQU_CREA, E.EQU_ACTUALIZO, E.EQU_FECHACREA, E.EQU_FECHAACTUA FROM [dbo].[TBL_EQUIPO] AS E inner join [dbo].[TBL_CATEGORIA] AS C ON E.CAT_ID = C.CAT_ID WHERE E.EQU_ELIMINO = 0 ";
+                var results = db.Query<Models.MEquipo>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+
+        public List<MEquipo> SelectList()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT EQU_ID, EQU_NOMBRE FROM [dbo].[TBL_EQUIPO] WHERE EQU_ELIMINO = 0 ";
                 var results = db.Query<Models.MEquipo>(findByAnyQuery);
                 return results.ToList();
             }

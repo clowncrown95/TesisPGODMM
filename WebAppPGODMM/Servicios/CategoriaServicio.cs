@@ -39,12 +39,41 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+
+        public List<Categoria> FindListCategoria()
+        {
+            List<Categoria> resultado = new List<Categoria>();
+            try
+            {
+                var Uri = url + "/Categoria/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Categoria>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
+
         public Categoria GetCategoria(int id)
         {
             Categoria resultado = new Categoria();
             try
             {
-                var Uri = url + "/api/Categoria/SelectById?CAT_ID" + id;
+                var Uri = url + "/Categoria/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -70,11 +99,11 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/Categoria/Insert";
+                var Uri = url + "/Categoria/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(categoria);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = Client.PostAsync(url, content).Result;
+                var response = Client.PostAsync(Uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string PlacesJson = response.Content.ReadAsStringAsync().Result;
@@ -98,7 +127,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Categoria/Update";
+                var Uri = url + "/Categoria/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(categoria);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -125,7 +154,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/Categoria/Delete?CAT_ID=" + Id + "&CAT_ACTUALIZO=" + LastModifierId + "&CAT_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/Categoria/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)

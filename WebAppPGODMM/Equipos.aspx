@@ -18,8 +18,6 @@
                             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-right"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                 <li role="presentation">
-                                    <asp:LinkButton runat="server" CommandArgument='<%#Eval("EQU_ID")%>' CommandName="detail"><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Ver</asp:LinkButton></li>
-                                <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("EQU_ID")%>' CommandName="edit"><span class='glyphicon glyphicon-edit' aria-hidden='true'></span> Editar</asp:LinkButton></li>
                                 <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("EQU_ID")%>' CommandName="delete"><span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span> Eliminar</asp:LinkButton></li>
@@ -28,16 +26,17 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Código" DataField="EQU_ID" Visible="true" />
-                <asp:BoundField HeaderText="Categoria" DataField="CAT_ID" Visible="true" />
+                <asp:BoundField HeaderText="Categoria" DataField="CAT_ID" Visible="false" />
+                <asp:BoundField HeaderText="Categoria" DataField="CAT_NOMBRE" Visible="true" />
                 <asp:BoundField HeaderText="Nombre" DataField="EQU_NOMBRE" Visible="true" />
                 <asp:BoundField HeaderText="Código" DataField="EQU_CODIGO" Visible="true" />
                 <asp:BoundField HeaderText="Descripción" DataField="EQU_DESCRIPCION" Visible="true" />
                 <asp:BoundField HeaderText="Tiempo" DataField="EQU_TIEMPO" Visible="true" />
+                <asp:BoundField HeaderText="Costo" DataField="EQU_COSTO" Visible="true" />
                 <asp:BoundField HeaderText="Crea" DataField="EQU_CREA" Visible="true" />
                 <asp:BoundField HeaderText="Actualizo" DataField="EQU_ACTUALIZO" Visible="true" />
                 <asp:BoundField HeaderText="Creación" DataField="EQU_FECHACREA" Visible="true" />
                 <asp:BoundField HeaderText="Modificación" DataField="EQU_FECHAACTUA" Visible="true" />
-                <asp:BoundField HeaderText="Elimino" DataField="EQU_ELIMINO" Visible="true" />
             </Columns>
         </asp:GridView>
     </div>

@@ -239,6 +239,12 @@
     <Content Include="CrearRtecnico.aspx" />
     <Content Include="CrearUsuario.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditarCargo.aspx" />
+    <Content Include="EditarCategoria.aspx" />
+    <Content Include="EditarEquipo.aspx" />
+    <Content Include="EliminarCargo.aspx" />
+    <Content Include="EliminarCategoria.aspx" />
+    <Content Include="EliminarEquipo.aspx" />
     <Content Include="Equipos.aspx" />
     <Content Include="Estados.aspx" />
     <Content Include="favicon.ico" />
@@ -255,7 +261,7 @@
     <Content Include="Locales.aspx" />
     <Content Include="Login.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="OrdenTrabajo.aspx" />
+    <Content Include="OrdenesTrabajo.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -395,6 +401,48 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarCargo.aspx.cs">
+      <DependentUpon>EditarCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarCargo.aspx.designer.cs">
+      <DependentUpon>EditarCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCategoria.aspx.cs">
+      <DependentUpon>EditarCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarCategoria.aspx.designer.cs">
+      <DependentUpon>EditarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarEquipo.aspx.cs">
+      <DependentUpon>EditarEquipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarEquipo.aspx.designer.cs">
+      <DependentUpon>EditarEquipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarCargo.aspx.cs">
+      <DependentUpon>EliminarCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarCargo.aspx.designer.cs">
+      <DependentUpon>EliminarCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarCategoria.aspx.cs">
+      <DependentUpon>EliminarCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarCategoria.aspx.designer.cs">
+      <DependentUpon>EliminarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarEquipo.aspx.cs">
+      <DependentUpon>EliminarEquipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarEquipo.aspx.designer.cs">
+      <DependentUpon>EliminarEquipo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Equipos.aspx.cs">
       <DependentUpon>Equipos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,12 +485,12 @@
     <Compile Include="Modelos\Equipo.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Local.cs" />
-    <Compile Include="OrdenTrabajo.aspx.cs">
-      <DependentUpon>OrdenTrabajo.aspx</DependentUpon>
+    <Compile Include="OrdenesTrabajo.aspx.cs">
+      <DependentUpon>OrdenesTrabajo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrdenTrabajo.aspx.designer.cs">
-      <DependentUpon>OrdenTrabajo.aspx</DependentUpon>
+    <Compile Include="OrdenesTrabajo.aspx.designer.cs">
+      <DependentUpon>OrdenesTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
@@ -476,6 +524,7 @@
     <Compile Include="Servicios\RolServicio.cs" />
     <Compile Include="Servicios\RTecnicoServicio.cs" />
     <Compile Include="Servicios\UsuarioServicio.cs" />
+    <Compile Include="Shared\Constantes.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

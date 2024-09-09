@@ -21,44 +21,24 @@ namespace WebAppPGODMM
                 }
             }
         }
-        private bool Validar()
-        {
-            bool resultado = true;
-            Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-            /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
-             //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
-             if (existe.USU_ID > 0)
-             {
-                 lblResultado.Text = "El Código de producto ya existe";
-                 resultado = false;
-             }*/
-            return resultado;
-        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-                return;
             try
             {
-                /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-                Modelos.Usuario usuario = new Modelos.Usuario
+                var categoria = new Modelos.Categoria();
                 {
-                    ROL_ID = ,
-                    PER_ID = ,
-                    USU_USUARIO = ,
-                    USU_PASSWORD = ,
-                    USU_ESTADO = ,
-                    USU_CREO = ,
-                    USU_ACTUALIZO = ,
-                    USU_FECHACREA = GetDate(),
-                    USU_FECHAACTUA = GetDate(),
-                    USU_ELIMINO = 0,
+                    categoria.CAT_NOMBRE = txtNombre.Text;
+                    categoria.CAT_DESCRIPCION = txtDescripcion.Text;
+                    categoria.CAT_PORCENTAJE = int.Parse(txtPorcentaje.Text);
+                    categoria.CAT_CREO = "";
+                    categoria.CAT_ACTUALIZO = "";
+                    categoria.CAT_FECHACREO = DateTime.Now;
+                    categoria.CAT_FECHAACTUA = DateTime.Now;
+                    categoria.CAT_ELIMINO = false;
                 };
-               var i = WebApiPPGODMM1.Daos.DaoUsuario.Insert(usuario);*/
-                /*if (i > 0)
-                     lblResultado.Text = "Datos grabados";
-                 else
-                     lblResultado.Text = "Intente de nuevo";*/
+                new Servicios.CategoriaServicio().InsertCategoria(categoria);
+                Response.Redirect("Categorias");
             }
             catch (Exception ex)
             {

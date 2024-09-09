@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrdenTrabajo.aspx.cs" Inherits="WebAppPGODMM.OrdenTrabajo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrdenesTrabajo.aspx.cs" Inherits="WebAppPGODMM.OrdenesTrabajo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Personas</h1>
+        <h1>Orden de Trabajo</h1>
     <div class="form-group">
         <div class="input-group">
             <span class="input-group-addon">Busqueda</span>

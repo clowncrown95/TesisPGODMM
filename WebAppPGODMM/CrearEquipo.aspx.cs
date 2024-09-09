@@ -15,50 +15,51 @@ namespace WebAppPGODMM
             {
                 if (Session["login"] == null || (bool)Session["login"] == false)
                     Response.Redirect("Login", false);
-                else
-                {
-                    //cargar info
-                }
+
+                CargarCategorias();
             }
         }
-        private bool Validar()
+
+        private void CargarCategorias()
         {
-            bool resultado = true;
-            Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-            /*var existe = WebApiPPGODMM1.Daos.DaoUsuario.SelectById(usuarioLogin.USU_ID);
-             //Datos.Proceso.DaoProducto.ObtenerPorUsuarioProCodigo(usuarioLogin.USU_ID, txtCodigo.Text); 
-             if (existe.USU_ID > 0)
-             {
-                 lblResultado.Text = "El Código de producto ya existe";
-                 resultado = false;
-             }*/
-            return resultado;
+            var categorias = ObtenerCategorias();
+            ddlTipoCategoria.Items.Clear();
+            ddlTipoCategoria.Items.Add(new ListItem("Seleccione una Categoria",""));
+
+            foreach (var categoria in categorias)
+            {
+                ddlTipoCategoria.Items.Add(new ListItem(categoria.CAT_NOMBRE, categoria.CAT_ID.ToString()));
+            }
         }
+
+        private List<Modelos.Categoria> ObtenerCategorias()
+        {
+            List<Modelos.Categoria> listaCategoria = new List<Modelos.Categoria>();
+
+            listaCategoria = new Servicios.CategoriaServicio().FindListCategoria();
+            return listaCategoria;
+        }
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (!Validar())
-                return;
             try
             {
-                /*Modelos.Usuario usuarioLogin = (Modelos.Usuario)Session["usuarioLogin"];
-                Modelos.Usuario usuario = new Modelos.Usuario
+                var equipo = new Modelos.Equipo();
                 {
-                    ROL_ID = ,
-                    PER_ID = ,
-                    USU_USUARIO = ,
-                    USU_PASSWORD = ,
-                    USU_ESTADO = ,
-                    USU_CREO = ,
-                    USU_ACTUALIZO = ,
-                    USU_FECHACREA = GetDate(),
-                    USU_FECHAACTUA = GetDate(),
-                    USU_ELIMINO = 0,
+                    equipo.CAT_ID = int.Parse(ddlTipoCategoria.SelectedValue);
+                    equipo.EQU_NOMBRE = txtNombre.Text;
+                    equipo.EQU_CODIGO = txtCodigo.Text; 
+                    equipo.EQU_DESCRIPCION = txtDescripcion.Text;
+                    equipo.EQU_TIEMPO = int.Parse(txtTiempo.Text);
+                    equipo.EQU_COSTO = int.Parse(txtCosto.Text);
+                    equipo.EQU_CREA = "";
+                    equipo.EQU_ACTUALIZO = "";
+                    equipo.EQU_FECHACREA = DateTime.Now;
+                    equipo.EQU_FECHAACTUA = DateTime.Now;
+                    equipo.EQU_ELIMINO = false;
                 };
-               var i = WebApiPPGODMM1.Daos.DaoUsuario.Insert(usuario);*/
-                /*if (i > 0)
-                     lblResultado.Text = "Datos grabados";
-                 else
-                     lblResultado.Text = "Intente de nuevo";*/
+                new Servicios.EquipoServicio().InsertEquipo(equipo);
+                Response.Redirect("Equipos");
             }
             catch (Exception ex)
             {

@@ -11,26 +11,17 @@ namespace WebAppPGODMM
 {
 
 
-    public partial class CrearEquipo
+    public partial class EliminarEquipo
     {
 
         /// <summary>
-        /// Control rfvIdCategoria.
+        /// Control lblEquipoId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdCategoria;
-
-        /// <summary>
-        /// Control ddlTipoCategoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoCategoria;
+        protected global::System.Web.UI.WebControls.HiddenField lblEquipoId;
 
         /// <summary>
         /// Control rfvNombre.
@@ -141,12 +132,12 @@ namespace WebAppPGODMM
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// Control lblResultado.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultado;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

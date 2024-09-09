@@ -18,8 +18,6 @@
                             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-right"></span></button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                                 <li role="presentation">
-                                    <asp:LinkButton runat="server" CommandArgument='<%#Eval("CAR_ID")%>' CommandName="detail"><span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span> Ver</asp:LinkButton></li>
-                                <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("CAR_ID")%>' CommandName="edit"><span class='glyphicon glyphicon-edit' aria-hidden='true'></span> Editar</asp:LinkButton></li>
                                 <li role="presentation">
                                     <asp:LinkButton runat="server" CommandArgument='<%#Eval("CAR_ID")%>' CommandName="delete"><span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span> Eliminar</asp:LinkButton></li>
@@ -34,7 +32,6 @@
                 <asp:BoundField HeaderText="Actualizo" DataField="CAR_ACTUALIZO" Visible="true" />
                 <asp:BoundField HeaderText="Creación" DataField="CAR_FECHACREA" Visible="true" />
                 <asp:BoundField HeaderText="Modificación" DataField="CAR_FECHAACTUA" Visible="true" />
-                <asp:BoundField HeaderText="Elimino" DataField="CAR_ELIMINO" Visible="true" />
             </Columns>
         </asp:GridView>
     </div>

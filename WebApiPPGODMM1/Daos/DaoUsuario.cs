@@ -31,14 +31,19 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
-        public List<MUsuario> SelectAll()
+        public List<MUsuario> SelectAll(string filtro)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
             {
-                const string findByAnyQuery = "SELECT * FROM [dbo].[TBL_USUARIO] WHERE USU_ELIMINO = 0 ";
+                string findByAnyQuery = "SELECT * FROM [dbo].[TBL_USUARIO] WHERE USU_ELIMINO = 0 AND USU_NOMBRE like '%"+filtro+"%'";
                 var results = db.Query<Models.MUsuario>(findByAnyQuery);
                 return results.ToList();
             }
+        }
+
+        public List<MUsuario> SelectAll()
+        {
+            throw new NotImplementedException();
         }
 
         public MUsuario SelectById(int Id)
