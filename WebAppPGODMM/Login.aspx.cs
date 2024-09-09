@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services.Description;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace WebAppPGODMM
@@ -26,7 +20,7 @@ namespace WebAppPGODMM
             }
             else
             {
-                MessageBox.Show("El Usuario o Password son incorrectos.","Error Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("El Usuario o Password son incorrectos.", "Error Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

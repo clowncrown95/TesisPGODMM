@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace WebAppPGODMM
@@ -24,7 +21,7 @@ namespace WebAppPGODMM
         {
             var categorias = ObtenerCategorias();
             ddlTipoCategoria.Items.Clear();
-            ddlTipoCategoria.Items.Add(new ListItem("Seleccione una Categoria",""));
+            ddlTipoCategoria.Items.Add(new ListItem("Seleccione una Categoria", ""));
 
             foreach (var categoria in categorias)
             {
@@ -48,7 +45,7 @@ namespace WebAppPGODMM
                 {
                     equipo.CAT_ID = int.Parse(ddlTipoCategoria.SelectedValue);
                     equipo.EQU_NOMBRE = txtNombre.Text;
-                    equipo.EQU_CODIGO = txtCodigo.Text; 
+                    equipo.EQU_CODIGO = txtCodigo.Text;
                     equipo.EQU_DESCRIPCION = txtDescripcion.Text;
                     equipo.EQU_TIEMPO = int.Parse(txtTiempo.Text);
                     equipo.EQU_COSTO = int.Parse(txtCosto.Text);

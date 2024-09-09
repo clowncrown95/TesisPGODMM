@@ -1,22 +1,20 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Net.Http;
-using WebAppPGODMM.Modelos;
-using Newtonsoft.Json;
 using System.Text;
+using WebAppPGODMM.Modelos;
 
 namespace WebAppPGODMM.Servicios
 {
-    public class UsuarioServicio : ClienteBase 
+    public class UsuarioServicio : ClienteBase
     {
         public List<Usuario> FindAllUser(string filtro)
         {
             List<Usuario> resultado = new List<Usuario>();
             try
             {
-                var Uri = url + "/Usuario/SelectAll?filtro= "+filtro+"";
+                var Uri = url + "/Usuario/SelectAll?filtro= " + filtro + "";
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {

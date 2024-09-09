@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebAppPGODMM.Modelos.DTOM
+﻿namespace WebAppPGODMM.Modelos.DTOM
 {
     public class DTOUsuCom
     {

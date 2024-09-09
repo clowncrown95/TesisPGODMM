@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using WebApiPPGODMM1.Daos;
 
 namespace WebAppPGODMM
 {
@@ -22,7 +16,7 @@ namespace WebAppPGODMM
                 }
             }
         }
-        
+
         protected void btnGrabar_Click(object sender, EventArgs e)
         {
             try
@@ -37,7 +31,7 @@ namespace WebAppPGODMM
                     cargo.CAR_FECHAACTUA = DateTime.Now;
                     cargo.CAR_ELIMINO = false;
                 };
-               new Servicios.CargoServicio().InsertCargo(cargo);
+                new Servicios.CargoServicio().InsertCargo(cargo);
                 Response.Redirect("Cargos");
             }
             catch (Exception ex)

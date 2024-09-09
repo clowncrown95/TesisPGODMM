@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebAppPGODMM.Modelos;
 
 namespace WebAppPGODMM
 {
@@ -71,7 +67,7 @@ namespace WebAppPGODMM
                     EQU_CODIGO = txtCodigo.Text,
                     EQU_DESCRIPCION = txtDescripcion.Text,
                     EQU_TIEMPO = int.Parse(txtTiempo.Text),
-                    EQU_COSTO = int.Parse(txtCosto.Text),               
+                    EQU_COSTO = int.Parse(txtCosto.Text),
                     EQU_ACTUALIZO = nombreUsu,
                     EQU_FECHAACTUA = DateTime.Now,
                 };
