@@ -86,6 +86,7 @@ namespace WebAppPGODMM
                 var nombreUsu = new Modelos.Usuario().USU_USUARIO;
                 var persona = new Modelos.Persona
                 {
+                    PER_ID = int.Parse(lblPersonaId.Value),
                     CAR_ID = int.Parse(ddlCargo.SelectedValue),
                     USU_ID = int.Parse(ddlUsuario.SelectedValue),
                     PER_APELLIDO = txtApellido.Text,

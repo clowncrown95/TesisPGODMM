@@ -39,6 +39,33 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+        public List<Estado> FindListEstado()
+        {
+            List<Estado> resultado = new List<Estado>();
+            try
+            {
+                var Uri = url + "/Estado/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Estado>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
         public Estado GetEstado(int id)
         {
             Estado resultado = new Estado();

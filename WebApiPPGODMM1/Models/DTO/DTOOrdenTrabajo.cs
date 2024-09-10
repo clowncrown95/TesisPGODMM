@@ -16,7 +16,7 @@ namespace WebApiPPGODMM1.Models.DTO
         public int ORD_NUMERO { get; set; }
         public int EQU_NOMBRE { get; set; }
         public string DTOR_DETALLE { get; set; }
-        public string RTEC_DESCRIPCION { get; set; }
+        public string RTEC_DESCIPCION { get; set; }
         public string RTEC_RESPALDO { get; set; }
         public float RTEC_COSTO { get; set; }
         public string RTEC_FIRMA { get; set; }

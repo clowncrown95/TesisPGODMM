@@ -36,24 +36,24 @@ namespace WebAppPGODMM
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CrearOrdenTrabajo");
+            Response.Redirect("CrearOT");
         }
 
         protected void gvDatos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            Session["PER_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
+            Session["ORD_ID"] = Convert.ToInt32(e.CommandArgument.ToString());
 
-            if (e.CommandName.Equals("detail"))
-            {
-                Response.Redirect("OTDetalles");
-            }
             if (e.CommandName.Equals("edit"))
             {
-                Response.Redirect("OTEditar");
+                int ordId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.ordenesId] = ordId;
+                Response.Redirect("EditarOT");
             }
             if (e.CommandName.Equals("delete"))
             {
-                Response.Redirect("OTEliminar");
+                int ordId = Convert.ToInt32(e.CommandArgument.ToString());
+                Session[Shared.Constantes.ordenesId] = ordId;
+                Response.Redirect("EliminarOT");
             }
         }
     }

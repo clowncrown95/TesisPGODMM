@@ -12,5 +12,6 @@
         public const string rolId = "rolIdSF";
         public const string usuarioId = "usuarioIdSF";
         public const string persoId = "persoIdSF";
+        public const string ordenesId = "persoIdSF";
     }
 }

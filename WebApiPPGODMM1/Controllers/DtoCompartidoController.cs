@@ -28,5 +28,29 @@ namespace WebApiPPGODMM1.Controllers
         {
             return new Daos.DaoDto.DaoDtoOrdenTrabajo().SelectAll();
         }
+        [Route("SelectById")]
+        [HttpGet]
+        public Models.DTO.DTOOrdenTrabajo SelectById(int Id)
+        {
+            return new Daos.DaoDto.DaoDtoOrdenTrabajo().SelectById(Id);
+        }
+        [Route("Insert")]
+        [HttpPost]
+        public bool Insert(Models.DTO.DTOOrdenTrabajo model)
+        {
+            return new Daos.DaoDto.DaoDtoOrdenTrabajo().Insert(model);
+        }
+        [Route("Update")]
+        [HttpPut]
+        public bool Update(Models.DTO.DTOOrdenTrabajo model)
+        {
+            return new Daos.DaoDto.DaoDtoOrdenTrabajo().Update(model);
+        }
+        [Route("Delete")]
+        [HttpDelete]
+        public bool Delete(int Id)
+        {
+            return new Daos.DaoDto.DaoDtoOrdenTrabajo().Delete(Id);
+        }
     }
 }

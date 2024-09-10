@@ -40,6 +40,15 @@ namespace WebApiPPGODMM1.Daos
                 return results.ToList();
             }
         }
+        public List<MEstado> SelectList()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT EST_ID, EST_NOMBRE FROM [dbo].[TBL_ESTADO] WHERE EST_ELIMINO = 0 ";
+                var results = db.Query<Models.MEstado>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
 
         public MEstado SelectById(int Id)
         {

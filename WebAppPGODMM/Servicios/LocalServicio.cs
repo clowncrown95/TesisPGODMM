@@ -38,6 +38,33 @@ namespace WebAppPGODMM.Servicios
 
             return resultado;
         }
+        public List<Local> FindListLocal()
+        {
+            List<Local> resultado = new List<Local>();
+            try
+            {
+                var Uri = url + "/Local/SelectList";
+                HttpResponseMessage response = Client.GetAsync(Uri).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    string PlacesJson = response.Content.ReadAsStringAsync().Result;
+                    if (PlacesJson.Length > 0)
+                    {
+                        resultado = JsonConvert.DeserializeObject<List<Local>>(PlacesJson);
+                    }
+                }
+                else
+                {
+                    //error en el servicio
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultado;
+        }
         public Local GetLocal(int id)
         {
             Local resultado = new Local();

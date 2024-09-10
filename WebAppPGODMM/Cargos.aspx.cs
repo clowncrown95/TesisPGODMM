@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.UI.WebControls;
+using WebAppPGODMM.Modelos;
 
 namespace WebAppPGODMM
 {
@@ -28,7 +30,7 @@ namespace WebAppPGODMM
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargarInformacion();
+
         }
         protected void btnNuevo_Click(object sender, EventArgs e)
         {

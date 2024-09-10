@@ -234,6 +234,7 @@
     <Content Include="CrearEquipo.aspx" />
     <Content Include="CrearEstado.aspx" />
     <Content Include="CrearLocal.aspx" />
+    <Content Include="CrearOT.aspx" />
     <Content Include="CrearPersona.aspx" />
     <Content Include="CrearRol.aspx" />
     <Content Include="CrearRtecnico.aspx" />
@@ -252,6 +253,7 @@
     <Content Include="EliminarEquipo.aspx" />
     <Content Include="EliminarEstado.aspx" />
     <Content Include="EliminarLocal.aspx" />
+    <Content Include="EliminarPersona.aspx" />
     <Content Include="EliminarRol.aspx" />
     <Content Include="EliminarUsuario.aspx" />
     <Content Include="Equipos.aspx" />
@@ -374,6 +376,13 @@
     </Compile>
     <Compile Include="CrearLocal.aspx.designer.cs">
       <DependentUpon>CrearLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearOT.aspx.cs">
+      <DependentUpon>CrearOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearOT.aspx.designer.cs">
+      <DependentUpon>CrearOT.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearPersona.aspx.cs">
       <DependentUpon>CrearPersona.aspx</DependentUpon>
@@ -500,6 +509,13 @@
     </Compile>
     <Compile Include="EliminarLocal.aspx.designer.cs">
       <DependentUpon>EliminarLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarPersona.aspx.cs">
+      <DependentUpon>EliminarPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarPersona.aspx.designer.cs">
+      <DependentUpon>EliminarPersona.aspx</DependentUpon>
     </Compile>
     <Compile Include="EliminarRol.aspx.cs">
       <DependentUpon>EliminarRol.aspx</DependentUpon>

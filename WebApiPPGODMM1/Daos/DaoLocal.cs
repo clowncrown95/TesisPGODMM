@@ -41,6 +41,16 @@ namespace WebApiPPGODMM1.Daos
             }
         }
 
+        public List<MLocal> SelectList()
+        {
+            using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))
+            {
+                const string findByAnyQuery = "SELECT LOC_ID, LOC_NOMBRE FROM [dbo].[TBL_LOCAL] WHERE LOC_ELIMINO = 0 ";
+                var results = db.Query<Models.MLocal>(findByAnyQuery);
+                return results.ToList();
+            }
+        }
+
         public MLocal SelectById(int Id)
         {
             using (IDbConnection db = new SqlConnection(Conexion.GetConnection()))

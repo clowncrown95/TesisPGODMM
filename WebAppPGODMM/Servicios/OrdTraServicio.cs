@@ -43,7 +43,7 @@ namespace WebAppPGODMM.Servicios
             OrdTra resultado = new OrdTra();
             try
             {
-                var Uri = url + "/api/OrdenTrabajo/SelectById?ORD_ID" + id;
+                var Uri = url + "/OrdenTrabajo/SelectById?Id=" + id;
                 HttpResponseMessage response = Client.GetAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -69,7 +69,7 @@ namespace WebAppPGODMM.Servicios
             int resultado = 0;
             try
             {
-                var Uri = url + "/api/OrdenTrabajo/Insert";
+                var Uri = url + "/OrdenTrabajo/Insert";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(ordTra);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -97,7 +97,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/OrdenTrabajo/Update";
+                var Uri = url + "/OrdenTrabajo/Update";
                 var Client = new HttpClient();
                 var data = JsonConvert.SerializeObject(ordTra);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -124,7 +124,7 @@ namespace WebAppPGODMM.Servicios
             bool resultado = false;
             try
             {
-                var Uri = url + "/api/OrdenTrabajo/Delete?ORD_ID=" + Id + "&ORD_ACTUALIZO=" + LastModifierId + "&ORD_FECHAACTUA=" + LastModified + "";
+                var Uri = url + "/OrdenTrabajo/Delete?Id=" + Id + "&Usuario=" + LastModifierId + "&Fecha=" + LastModified + "";
                 var Client = new HttpClient();
                 var response = Client.DeleteAsync(Uri).Result;
                 if (response.IsSuccessStatusCode)
